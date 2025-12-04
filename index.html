@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TikTok Immersive Search - ONEDEV</title>
+
+    <!-- ICON & FONT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- ===================== FULL CSS DIGABUNG ===================== -->
+    <style>
+        :root{--primary:#fe2c55;--secondary:#25f4ee;--bg-dark:#000;--bg-panel:#121212;--text-main:#fff;--text-sub:rgba(255,255,255,.75);--glass:rgba(255,255,255,.1)}*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;-webkit-tap-highlight-color:transparent}body{background:var(--bg-dark);color:var(--text-main);height:100vh;width:100vw;overflow:hidden;display:flex;justify-content:center}.app-container{width:100%;max-width:480px;height:100%;background:var(--bg-panel);position:relative;display:flex;flex-direction:column;box-shadow:0 0 50px rgba(0,0,0,.5)}.hamburger{position:absolute;top:18px;left:18px;width:46px;height:46px;background:var(--glass);backdrop-filter:blur(12px);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;z-index:200;cursor:pointer;transition:.3s}.hamburger:hover{transform:scale(1.1);background:rgba(255,255,255,.2)}.wa-follow{margin-top:32px;padding:11px 24px;background:rgba(59,141,255,.18);color:#4dabf7;font-size:.9rem;font-weight:600;border-radius:30px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(77,171,247,.3);transition:.3s}.wa-follow:hover{background:rgba(77,171,247,.35);color:#fff;transform:translateY(-2px)}.donasi-panel{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,0,0,.98),rgba(10,10,15,.95));backdrop-filter:blur(20px);z-index:150;transition:left .5s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;align-items:center;padding-top:80px;overflow-y:auto}.donasi-panel.active{left:0}.donasi-title{font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:30px;text-align:center;letter-spacing:1px;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.qris-container{width:290px;height:290px;padding:12px;background:linear-gradient(45deg,var(--primary),var(--secondary));border-radius:20px;box-shadow:0 15px 40px rgba(254,44,85,.4);margin-bottom:30px}.qris-img{width:100%;height:100%;background:#fff;border-radius:16px;object-fit:contain;padding:10px}.thanks-text{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:30px;text-align:center}.social-text{color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:20px;font-weight:500}.social-buttons{display:flex;gap:30px;margin-top:10px}.social-btn{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:#fff;text-decoration:none;box-shadow:0 10px 25px rgba(0,0,0,.5);transition:.3s}.social-btn.tiktok{background:linear-gradient(135deg,#ff0050,#000)}.social-btn.telegram{background:#0088cc}.social-btn:hover{transform:scale(1.15)}.close-donasi{position:absolute;top:20px;right:20px;font-size:2rem;color:#fff;cursor:pointer;opacity:.7;transition:.3s}.close-donasi:hover{opacity:1;transform:rotate(90deg)}.floating-header{position:absolute;top:0;left:0;width:100%;z-index:100;padding:20px 15px;background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);pointer-events:none}.search-wrapper{pointer-events:auto;display:flex;gap:10px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:8px 15px;border-radius:50px;border:1px solid rgba(255,255,255,.1);transition:.3s}.search-wrapper:focus-within{background:rgba(0,0,0,.6);border-color:var(--primary);box-shadow:0 0 15px rgba(254,44,85,.3)}#search-input{background:transparent;border:none;color:#fff;flex:1;font-size:.95rem;outline:none}#search-button{background:transparent;border:none;color:#fff;cursor:pointer;font-size:1.1rem}.welcome-search{width:88%;max-width:400px;margin:30px auto 20px}.feed-container{flex:1;height:100%;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth;scrollbar-width:none}.feed-container::-webkit-scrollbar{display:none}.video-item{width:100%;height:100%;position:relative;scroll-snap-align:start;scroll-snap-stop:always;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden}.video-player{width:100%;height:100%;object-fit:cover;display:block}.video-overlay{position:absolute;bottom:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,transparent 40%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;pointer-events:none}.bottom-layout{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}.info-side{flex:1;padding-right:20px;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,.5);pointer-events:auto}.author-tag{font-weight:700;font-size:1.1rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}.author-tag img{width:32px;height:32px;border-radius:50%;border:1px solid #fff}.video-desc{font-size:.9rem;line-height:1.4;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.music-tag{font-size:.8rem;display:flex;align-items:center;gap:5px;opacity:.9}.action-side{display:flex;flex-direction:column;gap:20px;align-items:center;pointer-events:auto;min-width:50px}.action-btn{background:transparent;border:none;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;transition:transform .2s}.action-btn:active{transform:scale(.9)}.icon-circle{font-size:1.8rem;color:#fff;filter:drop-shadow(0 2px 5px rgba(0,0,0,.5));transition:color .3s}.action-btn:hover .icon-circle{color:var(--primary)}.action-text{color:#fff;font-size:.75rem;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.8)}.download-btn-special{width:45px;height:45px;background:linear-gradient(45deg,var(--secondary),#0fa);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px rgba(37,244,238,.5);animation:pulse 2s infinite}.download-btn-special i{color:#000;font-size:1.2rem}.loading-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:none;flex-direction:column;align-items:center;gap:15px;z-index:50}.tiktok-spinner{width:40px;height:40px;border-radius:50%;border:4px solid rgba(255,255,255,.1);border-top-color:var(--secondary);border-left-color:var(--primary);animation:spin .8s linear infinite}.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:var(--text-sub);text-align:center;padding:20px}.play-pause-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);font-size:4rem;color:rgba(255,255,255,.7);pointer-events:none;transition:transform .2s cubic-bezier(.175,.885,.32,1.275)}.video-item.paused .play-pause-icon{transform:translate(-50%,-50%) scale(1)}.sann-footer{position:absolute;bottom:10px;left:0;width:100%;text-align:center;font-size:.7rem;color:rgba(255,255,255,.3);pointer-events:none;z-index:100}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- MENU -->
+        <div class="hamburger" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="donasi-panel" id="donasi-panel">
+            <i class="fas fa-times close-donasi" id="close-donasi"></i>
+            <h1 class="donasi-title">Sawer Seiklasnya</h1>
+
+            <div class="qris-container">
+                <img src="https://i.imgur.com/enDewCy.jpeg" class="qris-img">
+            </div>
+
+            <div class="thanks-text">terimakasih yang sudah berdonasi ,semoga rezekinya dilancarkan😊</div>
+
+            <div class="social-text">Ikuti akun sosial media kami</div>
+            <div class="social-buttons">
+                <a href="https://www.tiktok.com/@onedev02" target="_blank" class="social-btn tiktok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://t.me/onetoxice" target="_blank" class="social-btn telegram"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </div>
+
+        <!-- SEARCH TOP -->
+        <header class="floating-header" id="top-search" style="display:none;">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Cari tren, suara, atau user..." autocomplete="off">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <div class="loading-overlay" id="loading">
+            <div class="tiktok-spinner"></div>
+            <p>Memuat Video...</p>
+        </div>
+
+        <div class="feed-container" id="video-feed">
+
+            <div class="empty-state" id="welcome-message">
+                <i class="fab fa-tiktok" style="font-size:4rem;margin-bottom:20px;"></i>
+                <h2>Tiktok Downloader V2</h2>
+
+                <div class="welcome-search">
+                    <div class="search-wrapper">
+                        <input type="text" id="welcome-search-input" placeholder="Cari tren, suara, atau user...">
+                        <button id="welcome-search-button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <a href="https://whatsapp.com/channel/0029Vb6o7sgGU3BKw965Ti0o" target="_blank" class="wa-follow">
+                    <i class="fab fa-whatsapp"></i> Follow Saluran WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="sann-footer">BY ONEDEV</div>
+    </div>
+
+    <!-- ===================== FULL JS DIGABUNG ===================== -->
+    <script>
+        document.getElementById("hamburger-btn").onclick=()=>document.getElementById("donasi-panel").classList.add("active");
+        document.getElementById("close-donasi").onclick=()=>document.getElementById("donasi-panel").classList.remove("active");
+        document.getElementById("donasi-panel").addEventListener("click",e=>{if(e.target===document.getElementById("donasi-panel"))document.getElementById("donasi-panel").classList.remove("active")});
+
+        document.addEventListener("DOMContentLoaded",function(){
+            const top=document.getElementById("top-search"),
+                wsi=document.getElementById("welcome-search-input"),
+                wsb=document.getElementById("welcome-search-button"),
+                si=document.getElementById("search-input"),
+                sb=document.getElementById("search-button"),
+                loading=document.getElementById("loading"),
+                feed=document.getElementById("video-feed"),
+                welcome=document.getElementById("welcome-message");
+
+            wsi.addEventListener("input",()=>si.value=wsi.value);
+            si.addEventListener("input",()=>wsi.value=si.value);
+
+            let observer=new IntersectionObserver(entries=>{
+                entries.forEach(entry=>{
+                    const vid=entry.target.querySelector("video");
+                    if(!vid)return;
+                    if(entry.isIntersecting){
+                        vid.play().catch(()=>{});
+                        entry.target.classList.remove("paused");
+                    }else{
+                        vid.pause();vid.currentTime=0;
+                    }
+                });
+            },{root:feed,threshold:.7});
+
+            async function search(q){
+                if(!q.trim())return;
+                loading.style.display="flex";
+                welcome.style.display="none";
+                top.style.display="block";
+                feed.innerHTML="";
+
+                try{
+                    const res=await fetch(`https://api.elrayyxml.web.id/api/search/tiktok?q=${encodeURIComponent(q)}`);
+                    const data=await res.json();
+                    loading.style.display="none";
+
+                    if(data.result&&data.result.length>0)showVideo(data.result);
+                    else error("Tidak ada video ditemukan.");
+                }catch{
+                    loading.style.display="none";
+                    error("Gagal terhubung ke server.");
+                }
+            }
+
+            function showVideo(list){
+                const num=x=>x>1e6?(x/1e6).toFixed(1)+"M":x>1e3?(x/1e3).toFixed(1)+"K":x;
+
+                list.forEach(v=>{
+                    const item=document.createElement("div");
+                    item.className="video-item";
+                    item.innerHTML=`
+                        <video class="video-player" loop playsinline poster="${v.cover}">
+                            <source src="${v.data}" type="video/mp4">
+                        </video>
+                        <i class="fas fa-play play-pause-icon"></i>
+                        <div class="video-overlay">
+                            <div class="bottom-layout">
+                                <div class="info-side">
+                                    <div class="author-tag">
+                                        <img src="${v.author.avatar}" onerror="this.src='https://via.placeholder.com/32'">
+                                        <span>${v.author.nickname}</span>
+                                    </div>
+                                    <div class="video-desc">${v.title}</div>
+                                    <div class="music-tag">
+                                        <i class="fas fa-music"></i>
+                                        <marquee scrollamount="4" style="max-width:150px;">Original Sound - ${v.author.fullname}</marquee>
+                                    </div>
+                                </div>
+
+                                <div class="action-side">
+                                    <button class="action-btn"><i class="fas fa-heart icon-circle"></i><span class="action-text">${num(v.stats.likes)}</span></button>
+                                    <button class="action-btn"><i class="fas fa-comment-dots icon-circle"></i><span class="action-text">${num(v.stats.comment)}</span></button>
+                                    <button class="action-btn"><i class="fas fa-share icon-circle"></i><span class="action-text">${num(v.stats.share)}</span></button>
+
+                                    <button class="action-btn download-trigger">
+                                        <div class="download-btn-special"><i class="fas fa-download"></i></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>`;
+
+                    feed.appendChild(item);
+                    observer.observe(item);
+
+                    item.addEventListener("click",e=>{
+                        if(e.target.closest(".action-btn"))return;
+                        const vid=item.querySelector("video");
+                        vid[vid.paused?"play":"pause"]();
+                        item.classList.toggle("paused",vid.paused);
+                    });
+
+                    item.querySelector(".download-trigger").addEventListener("click",async e=>{
+                        e.stopPropagation();
+                        const btn=e.currentTarget.querySelector(".download-btn-special"),
+                              org=btn.innerHTML;
+                        btn.innerHTML='<i class="fas fa-spinner fa-spin"></i>';
+
+                        try{
+                            const url=`https://api.nvidiabotz.xyz/download/tiktok?url=${encodeURIComponent(v.data)}`;
+                            const r=await fetch(url);
+                            const j=await r.json();
+
+                            if(j.status&&j.result&&j.result.video_hd){
+                                const a=document.createElement("a");
+                                a.href=j.result.video_hd;
+                                a.download=`ONEDEV_${Date.now()}.mp4`;
+                                document.body.appendChild(a);
+                                a.click();
+                                a.remove();
+                                btn.innerHTML='<i class="fas fa-check"></i>';
+                                return setTimeout(()=>btn.innerHTML=org,2000);
+                            }
+                        }catch{}
+
+                        const a=document.createElement("a");
+                        a.href=v.data;
+                        a.download=`ONEDEV_${Date.now()}.mp4`;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+
+                        btn.innerHTML='<i class="fas fa-check"></i>';
+                        setTimeout(()=>btn.innerHTML=org,2000);
+                    });
+                });
+            }
+
+            function error(msg){
+                feed.innerHTML=`<div class="empty-state"><p>${msg}</p></div>`;
+            }
+
+            sb.addEventListener("click",()=>search(si.value));
+            si.addEventListener("keypress",e=>{if(e.key==="Enter")search(si.value)});
+            wsb.addEventListener("click",()=>search(wsi.value));
+            wsi.addEventListener("keypress",e=>{if(e.key==="Enter")search(wsi.value)});
+        });
+    </script>
+</body>
+</html>
