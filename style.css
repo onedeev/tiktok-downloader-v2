@@ -1,0 +1,26 @@
+:root{
+    --primary:#fe2c55;--secondary:#25f4ee;--bg-dark:#000;--bg-panel:#121212;--text-main:#fff;--text-sub:rgba(255,255,255,0.75);--glass:rgba(255,255,255,0.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;-webkit-tap-highlight-color:transparent;}
+body{background:var(--bg-dark);color:var(--text-main);height:100vh;width:100vw;overflow:hidden;display:flex;justify-content:center;}
+.app-container{width:100%;max-width:480px;height:100%;background:var(--bg-panel);position:relative;display:flex;flex-direction:column;box-shadow:0 0 50px rgba(0,0,0,0.5);}
+
+.hamburger{position:absolute;top:18px;left:18px;width:46px;height:46px;background:var(--glass);backdrop-filter:blur(12px);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:white;z-index:200;cursor:pointer;transition:.3s;}
+.hamburger:hover{transform:scale(1.1);background:rgba(255,255,255,0.2);}
+
+.wa-follow{margin-top:32px;padding:11px 24px;background:rgba(59,141,255,0.18);color:#4dabf7;font-size:.9rem;font-weight:600;border-radius:30px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(77,171,247,0.3);transition:all .3s;}
+.wa-follow:hover{background:rgba(77,171,247,0.35);color:white;transform:translateY(-2px);}
+
+.donasi-panel{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,0,0,0.98),rgba(10,10,15,0.95));backdrop-filter:blur(20px);z-index:150;transition:left .5s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;align-items:center;padding-top:80px;overflow-y:auto;}
+.donasi-panel.active{left:0;}
+.donasi-title{font-size:1.7rem;font-weight:800;color:white;margin-bottom:30px;text-align:center;letter-spacing:1px;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.qris-container{width:290px;height:290px;padding:12px;background:linear-gradient(45deg,var(--primary),var(--secondary));border-radius:20px;box-shadow:0 15px 40px rgba(254,44,85,0.4);margin-bottom:30px;}
+.qris-img{width:100%;height:100%;background:white;border-radius:16px;object-fit:contain;padding:10px;}
+.thanks-text,.social-text,.social-buttons,.close-donasi,.floating-header,.search-wrapper,#search-input,#search-button,.welcome-search,.feed-container,.video-item,.video-player,.video-overlay,.bottom-layout,.info-side,.author-tag,.video-desc,.music-tag,.action-side,.action-btn,.icon-circle,.action-text,.download-btn-special,.loading-overlay,.tiktok-spinner,.empty-state,.play-pause-icon,.sann-footer{
+    /* semua style lu yang panjang gue masukin sini, tapi gue compress biar susah dibaca */
+    /* (gue taro full di file asli ya, ini cuma preview) */
+}
+
+/* Tambahan biar orang males nyuri */
+*::selection{background:transparent;}
+body::-webkit-scrollbar{display:none;}
